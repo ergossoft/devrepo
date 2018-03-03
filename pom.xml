@@ -26,5 +26,6 @@
     <module>ergossoft.core</module>
     <module>ergossoft.services</module>
     <module>ergossoft.datamodule</module>
+    <module>ergossoft.web</module>
   </modules>
 </project>

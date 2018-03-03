@@ -9,7 +9,7 @@
   </parent>
   <groupId>ergossoft.datamodule</groupId>
   <artifactId>ergossoft.datamodule</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.1-SNAPSHOT</version>
   <name>ergossoft.datamodule</name>
   <url>http://maven.apache.org</url>
   <properties>
