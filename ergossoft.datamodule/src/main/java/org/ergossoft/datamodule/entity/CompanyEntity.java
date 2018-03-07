@@ -3,8 +3,6 @@
  */
 package org.ergossoft.datamodule.entity;
 
-import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,9 +21,7 @@ import javax.persistence.NamedNativeQuery;
 @Entity
 @NamedNativeQueries({
 		@NamedNativeQuery(name = "fetchCompanies", query = "call GetCompanyNames()", resultClass = CompanyEntity.class) })
-public class CompanyEntity implements Serializable {
-
-	private static final long serialVersionUID = 1L;
+public class CompanyEntity {
 
 	/**
 	 * variable:id type: integer

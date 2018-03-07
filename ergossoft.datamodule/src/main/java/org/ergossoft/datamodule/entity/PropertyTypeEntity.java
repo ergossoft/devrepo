@@ -3,8 +3,6 @@
  */
 package org.ergossoft.datamodule.entity;
 
-import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -30,16 +28,12 @@ import javax.persistence.NamedNativeQuery;
 @NamedNativeQueries({
 		@NamedNativeQuery(name = "callGetPropertyTypes", query = "CALL GetPropertyTypes()", resultClass = PropertyTypeEntity.class) })
 
-public class PropertyTypeEntity implements Serializable {
+public class PropertyTypeEntity {
 	/**
 	 * defining the columns
 	 * 
 	 **/
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
 
 	/**
 	 * defining the variables id, property type

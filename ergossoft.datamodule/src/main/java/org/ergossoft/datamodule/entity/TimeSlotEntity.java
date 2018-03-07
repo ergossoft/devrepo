@@ -5,8 +5,6 @@
 
 package org.ergossoft.datamodule.entity;
 
-import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -30,11 +28,8 @@ import javax.persistence.NamedNativeQuery;
 @Entity
 @NamedNativeQueries({
 		@NamedNativeQuery(name = "callGetTimeslot", query = "call GetTimeslot();", resultClass = TimeSlotEntity.class) })
-public class TimeSlotEntity implements Serializable {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+public class TimeSlotEntity {
+	
 	/**
 	 * defining the column Schedule Time Id
 	 * 

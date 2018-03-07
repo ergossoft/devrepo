@@ -3,7 +3,6 @@
  */
 package org.ergossoft.datamodule.entity;
 
-import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -29,9 +28,7 @@ import javax.persistence.NamedNativeQuery;
 
 })
 
-public class CustomerEntity implements Serializable {
-
-	private static final long serialVersionUID = 1L;
+public class CustomerEntity {
 
 	/**
 	 * variable:id type: integer

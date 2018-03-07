@@ -3,8 +3,6 @@
  */
 package org.ergossoft.datamodule.entity;
 
-import java.io.Serializable;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -24,9 +22,7 @@ import javax.persistence.NamedNativeQuery;
 
 })
 
-public class LocationEntity implements Serializable {
-
-	private static final long serialVersionUID = 1L;
+public class LocationEntity {
 
 	/**
 	 * variable:id type: integer
