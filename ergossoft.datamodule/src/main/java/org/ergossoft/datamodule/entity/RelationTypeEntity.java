@@ -11,20 +11,18 @@ import javax.persistence.Id;
 import javax.persistence.NamedNativeQueries;
 import javax.persistence.NamedNativeQuery;
 
-/**
- * Class Name: RelationTypeEntity Purpose: Entity Class
- * 
- * @version
- * @author THILAK REDDY
- *
+/*-
+ * @author: Thilak Reddy 
+ * This class is used for Defining RelationType Details
  */
+
 @Entity
 @NamedNativeQueries({
 		@NamedNativeQuery(name = "callRelationTypes", query = "call GetRelationshipTypes()", resultClass = RelationTypeEntity.class) })
 public class RelationTypeEntity {
 
-	/**
-	 * variable:id type: integer
+	/*-
+	 *  id is used for identifying Relation Type with unique Id
 	 */
 
 	@Id
@@ -32,28 +30,28 @@ public class RelationTypeEntity {
 	@Column(name = "RelationshipTypeId", nullable = false)
 	private Integer id;
 
-	/**
-	 * variable:name type: String
+	/*-
+	 *  type is used for identifying Relation Type
 	 */
 
 	@Column(name = "type", nullable = false)
 	private String type;
 
-	/**
-	 * variable:description type: String
+	/*-
+	 *  description is used for describing the Relation
 	 */
 
 	@Column(name = "description", nullable = false)
 	private String description;
 
-	/**
+	/*-
 	 * zero-argument constructor
 	 */
 
 	public RelationTypeEntity() {
 	}
 
-	/**
+	/*-
 	 * Parameterized Constructor
 	 */
 
@@ -64,41 +62,55 @@ public class RelationTypeEntity {
 	}
 
 	/**
-	 * Getters and Setters
+	 * @return the id
 	 */
-
 	public Integer getId() {
 		return id;
 	}
 
-	public String getType() {
-		return type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
+	/**
+	 * @param id the id to set
+	 */
 	public void setId(Integer id) {
 		this.id = id;
 	}
 
 	/**
-	 * method:toString()
+	 * @return the type
+	 */
+	public String getType() {
+		return type;
+	}
+
+	/**
+	 * @param type the type to set
+	 */
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	/**
+	 * @return the description
+	 */
+	public String getDescription() {
+		return description;
+	}
+
+	/**
+	 * @param description the description to set
+	 */
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	/*-
+	 *  for Displaying Relation details instead of hashcode
 	 */
 
 	@Override
 	public String toString() {
-		return "CompanyEntity [id=" + id + ", type=" + type + ", description="
-				+ description + "]";
+		return "RelationTypeEntity [id=" + id + ", type=" + type
+				+ ", description=" + description + "]";
 	}
 
 }

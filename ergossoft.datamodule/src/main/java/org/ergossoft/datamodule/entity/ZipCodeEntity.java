@@ -11,20 +11,19 @@ import javax.persistence.Id;
 import javax.persistence.NamedNativeQueries;
 import javax.persistence.NamedNativeQuery;
 
-/**
- * Class Name: ZipCodeEntity Purpose: Entity Class
- * 
- * @version
- * @author THILAK REDDY
- *
+/*-
+ * @author: Thilak Reddy 
+ * This class is used for Defining ZipCode
+ *              Details
  */
+
 @Entity
 @NamedNativeQueries({
 		@NamedNativeQuery(name = "fetchAllZipCodes", query = "call GetZipCodes()", resultClass = ZipCodeEntity.class) })
 public class ZipCodeEntity {
 
-	/**
-	 * variable:id type: Integer
+	/*-
+	 *  id is used for identifying Zip Code with unique Id
 	 */
 
 	@Id
@@ -32,21 +31,21 @@ public class ZipCodeEntity {
 	@Column(name = "zipcodeid", nullable = false)
 	private Integer id;
 
-	/**
-	 * variable:zipcode type: String
+	/*-
+	 *  zipcode is used for identifying Zip Code
 	 */
 
 	@Column(name = "zipcode", nullable = false)
 	private String zipcode;
 
-	/**
+	/*-
 	 * zero-argument constructor
 	 */
 
 	public ZipCodeEntity() {
 	}
 
-	/**
+	/*-
 	 * Parameterized Constructor
 	 */
 
@@ -56,27 +55,37 @@ public class ZipCodeEntity {
 	}
 
 	/**
-	 * Getters and Setters
+	 * @return the id
 	 */
-
 	public Integer getId() {
 		return id;
 	}
 
-	public String getZipcode() {
-		return zipcode;
-	}
-
-	public void setZipcode(String zipcode) {
-		this.zipcode = zipcode;
-	}
-
+	/**
+	 * @param id the id to set
+	 */
 	public void setId(Integer id) {
 		this.id = id;
 	}
 
 	/**
-	 * method:toString()
+	 * @return the zipcode
+	 */
+	public String getZipcode() {
+		return zipcode;
+	}
+
+	/**
+	 * 
+	 * @param zipcode the zipcode to set
+	 */
+
+	public void setZipcode(String zipcode) {
+		this.zipcode = zipcode;
+	}
+
+	/*-
+	 *  for Displaying Zip Code details instead of hashcode
 	 */
 
 	@Override

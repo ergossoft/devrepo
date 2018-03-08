@@ -1,4 +1,4 @@
-package org.ergossoft.datamodule.idao;
+package org.ergossoft.datamodule.data.repository;
 
 import java.util.Date;
 import java.util.List;
@@ -15,91 +15,96 @@ import org.ergossoft.datamodule.entity.RelationTypeEntity;
 import org.ergossoft.datamodule.entity.TimeSlotEntity;
 import org.ergossoft.datamodule.entity.ZipCodeEntity;
 
-/**
- * Interface Name: OpenServiceOrderDAO
- * 
- * @version
- * @author THILAK REDDY
+/*-
+ * @author: Thilak Reddy 
+ * This interface is used for retrieving
+ * details of OpenServiceOrder
  */
 
-
-
 public interface OpenServiceOrderDAO {
-	
-	/**
-	 * method:getAllCompanies() purpose: for retrieving list of companies
+
+	/*-
+	 * for retrieving list of companies
 	 */
 
 	public List<CompanyEntity> getAllCompanies();
-	
-	
-	/**
-	 * method:getAllCompanies() purpose: for retrieving list of companies
+
+	/*-
+	 * for retrieving list of customers
+	 * @param customerId
 	 */
 
 	public List<CustomerEntity> getAllCustomersById(Integer customerid);
 
-	public List<CustomerEntity> getAllCustomersByName(String name);
+	/*-
+	 * for retrieving list of customers
+	 * 
+	 * @param customerName
+	 */
 
-	public List<CustomerEntity> getAllCustomersByDate(Date date);
-	
-	
-	/**
-	 * method: getAllLocationDetails() purpose: for retrieving list of locations
+	public List<CustomerEntity> getAllCustomersByName(String customername);
+
+	/*-
+	 * for retrieving list of customers
+	 * 
+	 * @param scheduleDate
+	 */
+
+	public List<CustomerEntity> getAllCustomersByDate(Date scheduleDate);
+
+	/*-
+	 * for retrieving list of locations
+	 * 
+	 * @param zipCode
 	 */
 
 	public List<LocationEntity> getAllLocationDetails(String zipCode);
 
-	/**
-	 * method: getAllPhoneTypes() purpose: for retrieving list of phone types
+	/*-
+	 * for retrieving list of phone types
 	 */
 
 	public List<PhoneTypeEntity> getAllPhoneTypes();
-	
-	/**
-	 * method: getAllPriorities() purpose: for retrieving list of priorities
+
+	/*-
+	 * for retrieving list of priorities
 	 */
 
 	public List<PriorityEntity> getAllPriorities();
 
-	/**
-	 * method: getAllProblemCodes() purpose: for retrieving list of problemCodes
+	/*-
+	 * for retrieving list of problemCodes
 	 */
 
 	public List<ProblemCodeEntity> getAllProblemCodes();
 
-	/**
-	 * method: getPropertyTypes() purpose: for retrieving list of property types
+	/*-
+	 * for retrieving list of property types
 	 */
 	List<PropertyTypeEntity> getPropertyTypes();
-	
-	/**
-	 * method: getAllRelationTypes() purpose: for retrieving list of relation
-	 * types
+
+	/*-
+	 * for retrieving list of relations with property
 	 */
 
 	public List<RelationTypeEntity> getAllRelationTypes();
-	
-	/**
-	 * method: getAllTimeSlots() purpose: for retrieving list of slots
-	 * types
+
+	/*-
+	 * for retrieving list of Time slots
 	 */
 
 	List<TimeSlotEntity> getTimeSlots();
-	
-	/**
-	 * method:getAllZipCodes() purpose: for retrieving list of zip codes
+
+	/*-
+	 * for retrieving list of zip codes
 	 */
 
 	public List<ZipCodeEntity> getAllZipCodes();
 
-	/**
-	 * method: getMarketingCampaignList() purpose: for retrieving list of Marketing codes
+	/*-
+	 * for retrieving list of Marketing codes
 	 */
 
-	
 	public List<MarketingCampaignEntity> getMarketingCampaignList();
-
-	
 
 }

@@ -11,20 +11,19 @@ import javax.persistence.Id;
 import javax.persistence.NamedNativeQueries;
 import javax.persistence.NamedNativeQuery;
 
-/**
- * Class Name: ProblemCodeEntity Purpose: Entity Class
- * 
- * @version
- * @author THILAK REDDY
- *
+/*-
+ * @author: Thilak Reddy 
+ * This class is used for Defining ProblemCode
+ *              Details
  */
+
 @Entity
 @NamedNativeQueries({
 		@NamedNativeQuery(name = "callGetProblemCodes()", query = "call GetProblemCodes()", resultClass = ProblemCodeEntity.class) })
 public class ProblemCodeEntity {
 
-	/**
-	 * variable:id type: integer
+	/*-
+	 *  id is used for identifying Problem code with unique Id
 	 */
 
 	@Id
@@ -32,30 +31,42 @@ public class ProblemCodeEntity {
 	@Column(name = "problemcategeoryid", nullable = false)
 	private Integer id;
 
-	/**
-	 * variable:name type: String
+	/*-
+	 *  name is used for identifying ProblemCategory with name
 	 */
 
 	@Column(name = "ProblemCategeoryName", nullable = false)
 	private String name;
 
+	/*-
+	 *  description is used for describing the ProblemCategory
+	 */
+
 	@Column(name = "ProblemCategeoryDescription")
 	private String description;
+
+	/*-
+	 *  problemTypeId is used for describing the problemTypeId
+	 */
 
 	@Column(name = "ProblemTypeId", nullable = false)
 	private Integer problemTypeId;
 
+	/*-
+	 *  problemTypeName is used for describing the problemTypeName
+	 */
+
 	@Column(name = "ProblemTypeName", nullable = false)
 	private String problemTypeName;
 
-	/**
+	/*-
 	 * zero-argument constructor
 	 */
 
 	public ProblemCodeEntity() {
 	}
 
-	/**
+	/*-
 	 * Parameterized Constructor
 	 */
 
@@ -69,51 +80,77 @@ public class ProblemCodeEntity {
 	}
 
 	/**
-	 * Getters and Setters
+	 * @return the id
 	 */
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	public Integer getId() {
 		return id;
 	}
 
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public Integer getProblemTypeId() {
-		return problemTypeId;
-	}
-
-	public void setProblemTypeId(Integer problemTypeId) {
-		this.problemTypeId = problemTypeId;
-	}
-
-	public String getProblemTypeName() {
-		return problemTypeName;
-	}
-
-	public void setProblemTypeName(String problemTypeName) {
-		this.problemTypeName = problemTypeName;
-	}
-
+	/**
+	 * @param id the id to set
+	 */
 	public void setId(Integer id) {
 		this.id = id;
 	}
 
 	/**
-	 * method:toString()
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * @param name the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	/**
+	 * @return the description
+	 */
+	public String getDescription() {
+		return description;
+	}
+
+	/**
+	 * @param description the description to set
+	 */
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	/**
+	 * @return the problemTypeId
+	 */
+	public Integer getProblemTypeId() {
+		return problemTypeId;
+	}
+
+	/**
+	 * @param problemTypeId the problemTypeId to set
+	 */
+	public void setProblemTypeId(Integer problemTypeId) {
+		this.problemTypeId = problemTypeId;
+	}
+
+	/**
+	 * @return the problemTypeName
+	 */
+	public String getProblemTypeName() {
+		return problemTypeName;
+	}
+
+	/**
+	 * @param problemTypeName the problemTypeName to set
+	 */
+	public void setProblemTypeName(String problemTypeName) {
+		this.problemTypeName = problemTypeName;
+	}
+
+	/*-
+	 *  for Displaying ProblemCode details instead of hashcode
 	 */
 
 	@Override

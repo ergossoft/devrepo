@@ -1,5 +1,5 @@
 /**
- * creating the org.ergossoft.datamodule.entity package for defining the 
+ * creating the org.ergossoft.datamodule.entity package for defining the
  * 
  * Marketing-Campaign entity class
  */
@@ -8,48 +8,35 @@ package org.ergossoft.datamodule.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedNativeQueries;
 import javax.persistence.NamedNativeQuery;
 
-/**
- * @author Keerthi
- *
+/*-
+ * @author: Keerthi 
+ * This class is used for Defining MarketingCampaign Details
  */
-/**
- * defining the entity object
- * 
- * defining the table
- * 
- * defining the named native query to display Phone types on drop down
- * 
- * **/
 
 @Entity
-@NamedNativeQueries({ 
-	  @NamedNativeQuery(
-			  name = "callGetMarketingCampaignList", 
-			    query = "call GetMarketingCampaignList()", 
-			    resultClass = MarketingCampaignEntity.class) 
-			})
-public class MarketingCampaignEntity 
-{
-	/**
-	 * defining the column MarketingCampaign-Id
-	 * 
-	 * **/
+@NamedNativeQueries({
+		@NamedNativeQuery(name = "callGetMarketingCampaignList", query = "call GetMarketingCampaignList()", resultClass = MarketingCampaignEntity.class) })
+public class MarketingCampaignEntity {
+	/*-
+	 *  id is used for identifying Location with unique Id
+	 */
+
 	@Id
-	@GeneratedValue
-	@Column(name="MarketingCampaignId")
-	
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "MarketingCampaignId")
+
 	private int id;
-	
-	/**
-	 * defining the column Description
-	 * 
-	 * **/
-	
-	@Column(name="Description")
+
+	/*-
+	 *  description is used for describing the location
+	 */
+
+	@Column(name = "Description")
 	private String description;
 
 	/**
@@ -79,6 +66,15 @@ public class MarketingCampaignEntity
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
+
+	/*-
+	 *  for Displaying MarketingCampaign details instead of hashcode
+	 */
+
+	@Override
+	public String toString() {
+		return "MarketingCampaignEntity [id=" + id + ", description="
+				+ description + "]";
+	}
 
 }

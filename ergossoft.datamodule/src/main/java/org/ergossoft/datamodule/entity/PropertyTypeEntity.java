@@ -11,38 +11,29 @@ import javax.persistence.Id;
 import javax.persistence.NamedNativeQueries;
 import javax.persistence.NamedNativeQuery;
 
-/**
- * @author Keerthi
- *
+/*-
+ * @author: Keerthi 
+ * This class is used for Defining PropertyType
+ *              Details
  */
 
-/**
- * defining the entity object
- * 
- * defining the table
- * 
- * defining the named native query to display property types on drop down
- * 
- **/
 @Entity
 @NamedNativeQueries({
 		@NamedNativeQuery(name = "callGetPropertyTypes", query = "CALL GetPropertyTypes()", resultClass = PropertyTypeEntity.class) })
 
 public class PropertyTypeEntity {
-	/**
-	 * defining the columns
-	 * 
-	 **/
-
-
-	/**
-	 * defining the variables id, property type
-	 * 
+	/*-
+	 *  id is used for identifying Property with unique Id
 	 */
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "propertyid", nullable = false)
 	private int id;
+
+	/*-
+	 *  propertyType is used for defining type of property
+	 */
 
 	@Column(name = "propertydescription", nullable = false)
 	private String propertyType;
@@ -55,8 +46,7 @@ public class PropertyTypeEntity {
 	}
 
 	/**
-	 * @param id
-	 *            the id to set
+	 * @param id the id to set
 	 */
 	public void setId(int id) {
 		this.id = id;
@@ -70,8 +60,7 @@ public class PropertyTypeEntity {
 	}
 
 	/**
-	 * @param propertyType
-	 *            the propertyType to set
+	 * @param propertyType the propertyType to set
 	 */
 	public void setPropertyType(String propertyType) {
 		this.propertyType = propertyType;

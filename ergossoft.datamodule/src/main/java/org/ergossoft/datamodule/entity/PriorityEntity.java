@@ -11,12 +11,9 @@ import javax.persistence.Id;
 import javax.persistence.NamedNativeQueries;
 import javax.persistence.NamedNativeQuery;
 
-/**
- * Class Name: PriorityEntity Purpose: Entity Class
- * 
- * @version
- * @author THILAK REDDY
- *
+/*-
+ * @author: Thilak Reddy 
+ * This class is used for Defining Priority Details
  */
 @Entity
 @NamedNativeQueries({
@@ -24,8 +21,8 @@ import javax.persistence.NamedNativeQuery;
 
 public class PriorityEntity {
 
-	/**
-	 * variable:id type: Integer
+	/*-
+	 *  id is used for identifying Priority with unique Id
 	 */
 
 	@Id
@@ -33,21 +30,21 @@ public class PriorityEntity {
 	@Column(name = "priorityid", nullable = false)
 	private Integer id;
 
-	/**
-	 * variable: colorcode type: String
+	/*-
+	 *  colorcode is used for identifying priority with colorcode
 	 */
 
 	@Column(name = "colorcode", nullable = false)
 	private String colorcode;
 
-	/**
+	/*-
 	 * zero-argument constructor
 	 */
 
 	public PriorityEntity() {
 	}
 
-	/**
+	/*-
 	 * Parameterized Constructor
 	 */
 
@@ -57,27 +54,35 @@ public class PriorityEntity {
 	}
 
 	/**
-	 * Getters and Setters
+	 * @return the id
 	 */
-
 	public Integer getId() {
 		return id;
 	}
 
-	public String getColorcode() {
-		return colorcode;
-	}
-
-	public void setColorcode(String colorcode) {
-		this.colorcode = colorcode;
-	}
-
+	/**
+	 * @param id the id to set
+	 */
 	public void setId(Integer id) {
 		this.id = id;
 	}
 
 	/**
-	 * method:toString()
+	 * @return the colorcode
+	 */
+	public String getColorcode() {
+		return colorcode;
+	}
+
+	/**
+	 * @param colorcode the colorcode to set
+	 */
+	public void setColorcode(String colorcode) {
+		this.colorcode = colorcode;
+	}
+
+	/*-
+	 *  for Displaying Priority details instead of hashcode
 	 */
 
 	@Override

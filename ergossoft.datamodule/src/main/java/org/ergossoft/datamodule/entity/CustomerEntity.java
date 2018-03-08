@@ -13,12 +13,10 @@ import javax.persistence.Id;
 import javax.persistence.NamedNativeQueries;
 import javax.persistence.NamedNativeQuery;
 
-/**
- * Class Name: CustomerEntity Purpose: Entity Class
- * 
- * @version
- * @author THILAK REDDY
- *
+/*-
+ * @author: Thilak Reddy 
+ * This class is used for Defining Customer
+ *              Details
  */
 @Entity
 @NamedNativeQueries({
@@ -30,8 +28,8 @@ import javax.persistence.NamedNativeQuery;
 
 public class CustomerEntity {
 
-	/**
-	 * variable:id type: integer
+	/*-
+	 * id is used for identifying customer with unique Id
 	 */
 
 	@Id
@@ -39,76 +37,56 @@ public class CustomerEntity {
 	@Column(name = "customerId", nullable = false)
 	private Integer id;
 
-	/**
-	 * variable:name type: String
+	/*-
+	 * name is used for identifying customer with a name
 	 */
 
 	@Column(name = "customername", nullable = false)
 	private String name;
 
+	/*-
+	 * lastCall is used for knowing when customer called last time
+	 */
+
 	@Column(name = "LastCall", nullable = false)
 	private Date lastCall;
+
+	/*-
+	 * update date is used for knowing when customer details updated
+	 */
 
 	@Column(name = "updatedate", nullable = false)
 	private Date updatedate;
 
+	/*-
+	 * state id is used for knowing to which state customer belongs
+	 */
+
 	@Column(name = "stateid", nullable = false)
 	private Integer stateid;
+
+	/*-
+	 * address is used for knowing customer address
+	 */
 
 	@Column(name = "CustomerServiceAddress", nullable = false)
 	private String address;
 
+	/*-
+	 * zipcode is used for knowing customer zipcode
+	 */
+
 	@Column(name = "zipcode", nullable = false)
 	private String zipcode;
 
-	public Date getLastCall() {
-		return lastCall;
-	}
-
-	public void setLastCall(Date lastCall) {
-		this.lastCall = lastCall;
-	}
-
-	public Date getUpdatedate() {
-		return updatedate;
-	}
-
-	public void setUpdatedate(Date updatedate) {
-		this.updatedate = updatedate;
-	}
-
-	public Integer getStateid() {
-		return stateid;
-	}
-
-	public void setStateid(Integer stateid) {
-		this.stateid = stateid;
-	}
-
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
-	public String getZipcode() {
-		return zipcode;
-	}
-
-	public void setZipcode(String zipcode) {
-		this.zipcode = zipcode;
-	}
-
-	/**
+	/*-
 	 * zero-argument constructor
 	 */
 
 	public CustomerEntity() {
 	}
 
-	/**
+	/*-
 	 * Parameterized Constructor
 	 */
 
@@ -124,27 +102,106 @@ public class CustomerEntity {
 	}
 
 	/**
-	 * Getters and Setters
+	 * @return the id
 	 */
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	public Integer getId() {
 		return id;
+
 	}
 
+	/**
+	 * @param id the id to set
+	 */
 	public void setId(Integer id) {
 		this.id = id;
 	}
 
 	/**
-	 * method:toString()
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * @param name the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	/**
+	 * @return the lastCall
+	 */
+	public Date getLastCall() {
+		return lastCall;
+	}
+
+	/**
+	 * @param lastCall the lastCall to set
+	 */
+	public void setLastCall(Date lastCall) {
+		this.lastCall = lastCall;
+	}
+
+	/**
+	 * @return the updatedate
+	 */
+	public Date getUpdatedate() {
+		return updatedate;
+	}
+
+	/**
+	 * @param updatedate the updatedate to set
+	 */
+	public void setUpdatedate(Date updatedate) {
+		this.updatedate = updatedate;
+	}
+
+	/**
+	 * @return the stateid
+	 */
+	public Integer getStateid() {
+		return stateid;
+	}
+
+	/**
+	 * @param stateid the stateid to set
+	 */
+	public void setStateid(Integer stateid) {
+		this.stateid = stateid;
+	}
+
+	/**
+	 * @return the address
+	 */
+	public String getAddress() {
+		return address;
+	}
+
+	/**
+	 * @param address the address to set
+	 */
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	/**
+	 * @return the zipcode
+	 */
+	public String getZipcode() {
+		return zipcode;
+	}
+
+	/**
+	 * @param zipcode the zipcode to set
+	 */
+	public void setZipcode(String zipcode) {
+		this.zipcode = zipcode;
+	}
+
+	/*-
+	 * for Displaying Customer details instead of hashcode
 	 */
 
 	@Override

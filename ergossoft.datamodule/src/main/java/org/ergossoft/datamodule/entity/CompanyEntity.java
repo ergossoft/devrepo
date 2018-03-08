@@ -11,20 +11,18 @@ import javax.persistence.Id;
 import javax.persistence.NamedNativeQueries;
 import javax.persistence.NamedNativeQuery;
 
-/**
- * Class Name: CompanyEntity Purpose: Entity Class
- * 
- * @version
- * @author THILAK REDDY
- *
+/*-
+ * @author: Thilak Reddy 
+ * This class is used for Defining Company
+ *              Details
  */
 @Entity
 @NamedNativeQueries({
 		@NamedNativeQuery(name = "fetchCompanies", query = "call GetCompanyNames()", resultClass = CompanyEntity.class) })
 public class CompanyEntity {
 
-	/**
-	 * variable:id type: integer
+	/*-
+	 * id is used for identifying company with unique Id
 	 */
 
 	@Id
@@ -32,21 +30,21 @@ public class CompanyEntity {
 	@Column(name = "companyid", nullable = false)
 	private Integer id;
 
-	/**
-	 * variable:name type: String
+	/*-
+	 * name is used for identifying company with a name
 	 */
 
 	@Column(name = "companyname", nullable = false)
 	private String name;
 
-	/**
+	/*-
 	 * zero-argument constructor
 	 */
 
 	public CompanyEntity() {
 	}
 
-	/**
+	/*-
 	 * Parameterized Constructor
 	 */
 
@@ -56,28 +54,36 @@ public class CompanyEntity {
 	}
 
 	/**
-	 * Getters and Setters
+	 * @return the id
 	 */
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	/**
-	 * method:toString()
-	 */
-
 	public Integer getId() {
 		return id;
 	}
 
+	/**
+	 * @param id the id to set
+	 */
 	public void setId(Integer id) {
 		this.id = id;
 	}
+
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * @param name the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	/*-
+	 * for Displaying ComPany details instead of hashcode
+	 */
 
 	@Override
 	public String toString() {

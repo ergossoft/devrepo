@@ -21,32 +21,25 @@ import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
-/**
- * Class Name: JpaConfiguration Purpose:Configurations for connecting to data
- * base
- * 
- * @version
- * @author THILAK REDDY
- *
+/*-
+ * @author: Thilak Reddy
+ * This Class is used for writing
+ * Configurations of OpenServiceOrder
  */
 
 @Configuration
-@ComponentScan(basePackages = { "org.ergossoft.datamodule.dao" })
+@ComponentScan(basePackages = { "org.ergossoft.datamodule.data.repository" })
 @PropertySource("classpath:application.properties")
 public class JpaConfiguration {
 
-	/**
-	 * Instance variable
-	 * 
-	 * type:Environment name:env purpose: accessing property file properties
+	/*-
+	 * accessing property file properties
 	 */
 
 	@Autowired
 	private Environment env;
 
-	/**
-	 * Instance method name:dataSource()
-	 * 
+	/*-
 	 * @return:DataSource object
 	 */
 
@@ -63,11 +56,8 @@ public class JpaConfiguration {
 		return dataSource;
 	}
 
-	/**
-	 * Instance method name:entityManagerFactory()
-	 * 
+	/*-
 	 * @return:EntityManager
-	 * 
 	 */
 
 	@Bean
@@ -82,7 +72,7 @@ public class JpaConfiguration {
 		return factoryBean;
 	}
 
-	/**
+	/*-
 	 * Provider specific adapter
 	 */
 
@@ -92,9 +82,9 @@ public class JpaConfiguration {
 		return hibernateJpaVendorAdapter;
 	}
 
-	/**
+	/*-
 	 * Here we provided provider specific properties.
-	 **/
+	 */
 
 	private Properties jpaProperties() {
 		Properties properties = new Properties();
@@ -109,11 +99,9 @@ public class JpaConfiguration {
 		return properties;
 	}
 
-	/**
-	 * method name:transactionManager()
-	 * 
-	 * @param: EntityManagerFactory
-	 * @return:JpaTransactionManager
+	/*-
+	 * @return: JpaTransactionManager
+	 * @param: entitymanager Factory
 	 */
 
 	@Bean
