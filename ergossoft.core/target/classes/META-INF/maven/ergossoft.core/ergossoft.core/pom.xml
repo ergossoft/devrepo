@@ -11,7 +11,7 @@
   <artifactId>ergossoft.core</artifactId>
   <version>0.1-SNAPSHOT</version>
   <name>ergossoft.core</name>
-  <url>http://maven.apache.org</url>
+  <url>http://www.ergossoft.org</url>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
@@ -23,4 +23,18 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  <build>
+  	<finalName>core-module</finalName>
+  		<plugins>
+  			<plugin>
+  				<groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
+                </configuration>
+  			</plugin>
+  		</plugins>
+  </build>
 </project>

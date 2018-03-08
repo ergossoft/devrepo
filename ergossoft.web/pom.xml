@@ -11,8 +11,8 @@
   <artifactId>ergossoft.web</artifactId>
   <version>0.1-SNAPSHOT</version>
   <packaging>war</packaging>
-  <name>ergossoft.web Maven Webapp</name>
-  <url>http://maven.apache.org</url>
+  <name>ergossoft.web</name>
+  <url>http://www.ergossoft.org</url>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -26,8 +26,74 @@
 	    <version>2.5</version>
 	    <scope>provided</scope>
 	</dependency>
+	<!-- Spring 4 dependencies -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>${springframework.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <!-- Spring security -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-core</artifactId>
+            <version>${springsecurity.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>${springsecurity.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>${springsecurity.version}</version>
+        </dependency>
+        <!-- ergos module dependencies -->
+        <dependency>
+        	<groupId>ergossoft.core</groupId>
+        	<artifactId>ergossoft.core</artifactId>
+        	<version>0.1-SNAPSHOT</version>
+        </dependency>
+        <!-- <dependency>
+        	<groupId>ergossoft.service</groupId>
+        	<artifactId>ergossoft.service</artifactId>
+        	<version>0.1-SNAPSHOT</version>
+        </dependency>  -->
   </dependencies>
   <build>
     <finalName>ergossoft.web</finalName>
+    <plugins>
+  			<plugin>
+  				<groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
+                </configuration>
+  			</plugin>
+  		</plugins>
   </build>
 </project>

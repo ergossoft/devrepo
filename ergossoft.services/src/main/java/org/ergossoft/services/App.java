@@ -1,7 +1,7 @@
 package org.ergossoft.services;
 
 /**
- * Hello world!
+ * 
  *
  */
 public class App 
