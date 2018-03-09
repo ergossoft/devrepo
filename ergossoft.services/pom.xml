@@ -77,7 +77,12 @@
         	<groupId>ergossoft.core</groupId>
         	<artifactId>ergossoft.core</artifactId>
         	<version>0.1-SNAPSHOT</version>
-        </dependency>       
+        </dependency> 
+        <dependency>
+        	<groupId>ergossoft.datamodule</groupId>
+        	<artifactId>ergossoft.datamodule</artifactId>
+        	<version>0.1-SNAPSHOT</version>
+        </dependency>      
       </dependencies>
       <build>
   		<finalName>service-module</finalName>

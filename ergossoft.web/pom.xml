@@ -76,11 +76,12 @@
         	<artifactId>ergossoft.core</artifactId>
         	<version>0.1-SNAPSHOT</version>
         </dependency>
-        <!-- <dependency>
-        	<groupId>ergossoft.service</groupId>
-        	<artifactId>ergossoft.service</artifactId>
+        <dependency>
+        	<groupId>ergossoft.services</groupId>
+        	<artifactId>ergossoft.services</artifactId>
         	<version>0.1-SNAPSHOT</version>
-        </dependency>  -->
+        </dependency>
+        
   </dependencies>
   <build>
     <finalName>ergossoft.web</finalName>
