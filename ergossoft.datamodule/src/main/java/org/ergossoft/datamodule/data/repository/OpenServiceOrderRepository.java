@@ -21,7 +21,7 @@ import org.ergossoft.datamodule.entity.ZipCodeEntity;
  * details of OpenServiceOrder
  */
 
-public interface OpenServiceOrderDAO {
+public interface OpenServiceOrderRepository {
 
 	/*-
 	 * for retrieving list of companies

@@ -3,7 +3,7 @@ package org.ergossoft.datamodule.data.repository.implementation;
 import java.util.Date;
 import java.util.List;
 
-import org.ergossoft.datamodule.data.repository.OpenServiceOrderDAO;
+import org.ergossoft.datamodule.data.repository.OpenServiceOrderRepository;
 import org.ergossoft.datamodule.entity.CompanyEntity;
 import org.ergossoft.datamodule.entity.CustomerEntity;
 import org.ergossoft.datamodule.entity.LocationEntity;
@@ -26,8 +26,8 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Repository
 @Transactional
-public class OpenServiceOrderDAOImpl extends AbstractPersistenceManager
-		implements OpenServiceOrderDAO {
+public class OpenServiceOrderRepositoryImpl extends AbstractPersistenceManager
+		implements OpenServiceOrderRepository {
 
 	/*-
 	 * @return : list of Companies

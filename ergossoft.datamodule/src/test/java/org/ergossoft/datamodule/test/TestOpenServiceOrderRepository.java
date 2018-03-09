@@ -4,7 +4,7 @@ import java.sql.Timestamp;
 import java.util.List;
 
 import org.ergossoft.datamodule.configuration.JpaConfiguration;
-import org.ergossoft.datamodule.data.repository.OpenServiceOrderDAO;
+import org.ergossoft.datamodule.data.repository.OpenServiceOrderRepository;
 import org.ergossoft.datamodule.entity.CompanyEntity;
 import org.ergossoft.datamodule.entity.CustomerEntity;
 import org.ergossoft.datamodule.entity.LocationEntity;
@@ -35,17 +35,17 @@ import org.springframework.transaction.annotation.Transactional;
 
 @ContextConfiguration(classes = { JpaConfiguration.class })
 @RunWith(SpringJUnit4ClassRunner.class)
-public class TestOpenServiceOrderDAO {
+public class TestOpenServiceOrderRepository {
 	static final Logger logger = LoggerFactory
-			.getLogger(TestOpenServiceOrderDAO.class);
+			.getLogger(TestOpenServiceOrderRepository.class);
 
 	/*-
-	 * purpose: openServiceOrderDAO is used for calling 
+	 * purpose: openServiceOrderRepository is used for calling 
 	 *          methods of OpenService Order
 	 */
 
 	@Autowired
-	private OpenServiceOrderDAO openServiceOrderDAO;
+	private OpenServiceOrderRepository openServiceOrderRepository;
 
 	/*-
 	 * purpose: for testing availability of Companies
@@ -56,7 +56,7 @@ public class TestOpenServiceOrderDAO {
 	@Rollback(false)
 	public void testGetAllCompanies() {
 
-		List<CompanyEntity> companies = openServiceOrderDAO.getAllCompanies();
+		List<CompanyEntity> companies = openServiceOrderRepository.getAllCompanies();
 
 		logger.info("Displaying Companies Using Logger");
 		logger.info(" " + companies);
@@ -73,16 +73,16 @@ public class TestOpenServiceOrderDAO {
 	@Rollback(false)
 	public void testGetAllCustomers() {
 
-		List<CustomerEntity> customers = openServiceOrderDAO
+		List<CustomerEntity> customers = openServiceOrderRepository
 				.getAllCustomersById(101);
 
-		List<CustomerEntity> customers2 = openServiceOrderDAO
+		List<CustomerEntity> customers2 = openServiceOrderRepository
 				.getAllCustomersByName("thilak");
 
 		Timestamp ts = Timestamp.valueOf(
 				String.format("%04d-%02d-%02d 00:00:01", 2009, 01, 01));
 
-		List<CustomerEntity> customers3 = openServiceOrderDAO
+		List<CustomerEntity> customers3 = openServiceOrderRepository
 				.getAllCustomersByDate(ts);
 
 		logger.info("Displaying customers Using Logger");
@@ -106,7 +106,7 @@ public class TestOpenServiceOrderDAO {
 	@Rollback(false)
 	public void testGetAllLocationDetails() {
 
-		List<LocationEntity> address = openServiceOrderDAO
+		List<LocationEntity> address = openServiceOrderRepository
 				.getAllLocationDetails("500098");
 
 		logger.info("Displaying address Using Logger");
@@ -125,7 +125,7 @@ public class TestOpenServiceOrderDAO {
 	@Rollback(false)
 	public void testGetAllPhoneTypes() {
 
-		List<PhoneTypeEntity> phoneTypes = openServiceOrderDAO
+		List<PhoneTypeEntity> phoneTypes = openServiceOrderRepository
 				.getAllPhoneTypes();
 
 		logger.info("Displaying PhoneTypes Using Logger");
@@ -143,7 +143,7 @@ public class TestOpenServiceOrderDAO {
 	@Rollback(false)
 	public void testGetAllPriorities() {
 
-		List<PriorityEntity> priorities = openServiceOrderDAO
+		List<PriorityEntity> priorities = openServiceOrderRepository
 				.getAllPriorities();
 
 		logger.info("Displaying Priorities Using Logger");
@@ -161,7 +161,7 @@ public class TestOpenServiceOrderDAO {
 	@Rollback(false)
 	public void testGetAllProblemCodes() {
 
-		List<ProblemCodeEntity> problems = openServiceOrderDAO
+		List<ProblemCodeEntity> problems = openServiceOrderRepository
 				.getAllProblemCodes();
 
 		logger.info("Displaying Problems Using Logger");
@@ -179,7 +179,7 @@ public class TestOpenServiceOrderDAO {
 	@Rollback(false)
 	public void testGetAllPropertyTypes() {
 
-		List<PropertyTypeEntity> propertyTypes = openServiceOrderDAO
+		List<PropertyTypeEntity> propertyTypes = openServiceOrderRepository
 				.getPropertyTypes();
 
 		logger.info("Displaying Property Types Using Logger");
@@ -197,7 +197,7 @@ public class TestOpenServiceOrderDAO {
 	@Rollback(false)
 	public void testGetAllRelationTypes() {
 
-		List<RelationTypeEntity> relationTypes = openServiceOrderDAO
+		List<RelationTypeEntity> relationTypes = openServiceOrderRepository
 				.getAllRelationTypes();
 
 		logger.info("Displaying RelationTypes Using Logger");
@@ -215,7 +215,7 @@ public class TestOpenServiceOrderDAO {
 	@Rollback(false)
 	public void testGetAllTimeSlots() {
 
-		List<TimeSlotEntity> timeSlots = openServiceOrderDAO.getTimeSlots();
+		List<TimeSlotEntity> timeSlots = openServiceOrderRepository.getTimeSlots();
 
 		logger.info("Displaying Phone types Using Logger");
 		logger.info(" " + timeSlots);
@@ -232,7 +232,7 @@ public class TestOpenServiceOrderDAO {
 	@Rollback(false)
 	public void testGetAllZipCodes() {
 
-		List<ZipCodeEntity> zipCodes = openServiceOrderDAO.getAllZipCodes();
+		List<ZipCodeEntity> zipCodes = openServiceOrderRepository.getAllZipCodes();
 
 		logger.info("Displaying  zipcodes Using Logger");
 		logger.info(" " + zipCodes);
@@ -249,7 +249,7 @@ public class TestOpenServiceOrderDAO {
 	@Rollback(false)
 	public void testGetAllMarketCampaigns() {
 
-		List<MarketingCampaignEntity> marketingCampaignList = openServiceOrderDAO
+		List<MarketingCampaignEntity> marketingCampaignList = openServiceOrderRepository
 				.getMarketingCampaignList();
 
 		logger.info("Displaying marketingCampaign List Using Logger");
