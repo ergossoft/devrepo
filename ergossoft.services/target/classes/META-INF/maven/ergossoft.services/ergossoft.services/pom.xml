@@ -17,9 +17,22 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
+    <!-- log 4j dependencies -->
+    	<dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>${log4j.version}</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>${common.lang.version}</version>
+            <type>jar</type>
+        </dependency>
     <!-- Spring 4 dependencies -->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -78,11 +91,11 @@
         	<artifactId>ergossoft.core</artifactId>
         	<version>0.1-SNAPSHOT</version>
         </dependency> 
-        <dependency>
+        <!-- <dependency>
         	<groupId>ergossoft.datamodule</groupId>
         	<artifactId>ergossoft.datamodule</artifactId>
         	<version>0.1-SNAPSHOT</version>
-        </dependency>      
+        </dependency>  -->     
       </dependencies>
       <build>
   		<finalName>service-module</finalName>
